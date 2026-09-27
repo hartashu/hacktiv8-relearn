@@ -23,13 +23,12 @@ DISPLAY keliling
 
 */
 
-
 // Insert your code here
 var pi = Math.PI;
 var jariJari;
 let keliling;
 
-jariJari = 10;
+jariJari = 999999;
 keliling = 2 * pi * jariJari;
 
 console.log(keliling);
