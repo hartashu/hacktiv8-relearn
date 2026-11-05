@@ -1,0 +1,28 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "name": "Belajar React",
+      "description": "Belajar React dari situs React-nya langsung",
+      "priority": "Critical"
+    },
+    {
+      "id": 2,
+      "name": "Belajar Tailwind",
+      "description": "Belajar Tailwind dari situs Tailwind-nya langsung",
+      "priority": "Low"
+    },
+    {
+      "id": 3,
+      "name": "Buat Aplikasi ToDo",
+      "description": "Buat aplikasi ToDo sederhana dengan memanfaatkan React dan Tailwind",
+      "priority": "Highest"
+    },
+    {
+      "id": 4,
+      "name": "Implementasi json-server",
+      "description": "Tarik data dengan React + json-server",
+      "priority": "Critical"
+    }
+  ]
+}

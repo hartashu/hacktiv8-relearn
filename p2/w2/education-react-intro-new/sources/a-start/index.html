@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Use CDN for tailwind v4 -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <title>ToDo ReactJS v1</title>
+</head>
+
+<body>
+  <!-- Section 1 -->
+  <section class="relative w-full px-8 text-gray-700 bg-white body-font">
+    <div class="container flex flex-col flex-wrap items-center justify-between py-5 mx-auto md:flex-row max-w-7xl">
+      <a href="#_"
+        class="relative z-10 flex items-center w-auto text-2xl font-extrabold leading-none text-black select-none">ToDo
+        ReactJS v1</a>
+
+      <div class="relative z-10 inline-flex items-center space-x-3 md:ml-5 lg:justify-end">
+        <a href="#"
+          class="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-gray-600 whitespace-no-wrap bg-white border border-gray-200 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:shadow-none">
+          Hello, Someone
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2 -->
+  <section class="w-full px-8 py-16 bg-gray-100 xl:px-8">
+    <div class="max-w-5xl mx-auto">
+      <div class="flex flex-col items-center md:flex-row">
+        <!-- <div class="w-full space-y-5 md:w-3/5 md:pr-16">
+          <p class="font-medium text-blue-500 uppercase">Building Businesses</p>
+          <h2 class="text-2xl font-extrabold leading-none text-black sm:text-3xl md:text-5xl">
+            Changing The Way People Do Business.
+          </h2>
+          <p class="text-xl text-gray-600 md:pr-16">Learn how to engage with your visitors and teach them about your
+            mission. We're revolutionizing the way customers and businesses interact.</p>
+        </div> -->
+
+        <div class="w-full mt-16 md:mt-0 md:w-5/5">
+          <div
+            class="relative z-10 h-auto p-8 py-10 overflow-hidden bg-white border-b-2 border-gray-300 rounded-lg shadow-2xl px-7">
+            <img class="mx-auto mb-8 rounded-full" src="https://placecats.com/80/80" alt="Placeholder 80x80" />
+            <h3 class="mb-6 text-2xl font-medium text-center">Identity</h3>
+            <input type="text" name="user-name"
+              class="block w-full px-4 py-3 mb-4 border border-2 border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none"
+              placeholder="Your Name" />
+            <div class="block">
+              <button class="w-full px-3 py-4 font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg">
+                Let's Go
+              </button>
+            </div>
+            <!-- <p class="w-full mt-4 text-sm text-center text-gray-500">Don't have an account? <a href="#_"
+                class="text-blue-500 underline">Sign up here</a></p> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3 -->
+  <section class="w-full px-8 py-16 bg-gray-100 xl:px-8">
+    <div class="max-w-5xl mx-auto">
+      <div class="flex flex-col items-center md:flex-row">
+        <!-- <div class="w-full space-y-5 md:w-3/5 md:pr-16">
+          <p class="font-medium text-blue-500 uppercase">Building Businesses</p>
+          <h2 class="text-2xl font-extrabold leading-none text-black sm:text-3xl md:text-5xl">
+            Changing The Way People Do Business.
+          </h2>
+          <p class="text-xl text-gray-600 md:pr-16">Learn how to engage with your visitors and teach them about your
+            mission. We're revolutionizing the way customers and businesses interact.</p>
+        </div> -->
+
+        <form class="w-full mt-16 md:mt-0 md:w-5/5">
+          <div
+            class="relative z-10 h-auto p-8 py-10 overflow-hidden bg-white border-b-2 border-gray-300 rounded-lg shadow-2xl px-7">
+            <h3 class="mb-6 text-2xl font-medium text-center">Add ToDo</h3>
+            <input type="text" name="todo-name"
+              class="block w-full px-4 py-3 mb-4 border border-2 border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none"
+              placeholder="ToDo Job" />
+            <input type="text" name="todo-description"
+              class="block w-full px-4 py-3 mb-4 border border-2 border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none"
+              placeholder="ToDo Description" />
+            <!-- <input type="text" name="todo-priority"
+              class="block w-full px-4 py-3 mb-4 border border-2 border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none"
+              placeholder="ToDo Priority"> -->
+
+            <select name="todo-priority"
+              class="block w-full px-4 py-3 mb-4 border border-2 border-gray-200 rounded-lg focus:ring focus:ring-blue-500 focus:outline-none">
+              <option selected disabled hidden></option>
+              <option value="Low">Low</option>
+              <option value="Critical">Critical</option>
+              <option value="Highest">Highest</option>
+            </select>
+
+            <div class="block">
+              <button class="w-full px-3 py-4 font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg">
+                Add
+              </button>
+            </div>
+            <!-- <p class="w-full mt-4 text-sm text-center text-gray-500">Don't have an account? <a href="#_"
+                class="text-blue-500 underline">Sign up here</a></p> -->
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4 -->
+  <section class="relative py-16 bg-white min-w-screen animation-fade animation-delay">
+    <div class="container px-0 px-8 mx-auto sm:px-12 xl:px-5">
+      <p class="text-xs font-bold text-left text-pink-500 uppercase sm:mx-6 sm:text-center sm:text-normal sm:font-bold">
+        See Your ToDo Here
+      </p>
+      <h3
+        class="mt-1 text-2xl font-bold text-left text-gray-800 sm:mx-6 sm:text-3xl md:text-4xl lg:text-5xl sm:text-center sm:mx-0">
+        ToDo List
+      </h3>
+
+      <!-- List of ToDo Here -->
+
+      <!-- ToDo 1 -->
+      <div
+        class="w-full px-6 py-6 mx-auto mt-10 bg-white border border-gray-200 rounded-lg sm:px-8 md:px-12 sm:py-8 sm:shadow lg:w-5/6 xl:w-2/3">
+        <h3 class="text-lg font-bold text-purple-500 sm:text-xl md:text-2xl">
+          Belajar React
+        </h3>
+
+        <div class="flex flex-wrap">
+          <div class="w-full md:w-3/4 px-4 mb-4 md:mb-0">
+            <p
+              class="mt-2 mr-2 text-base text-gray-600 sm:text-normal md:text-sm inline-block bg-gray-200 rounded-full px-3 py-1 font-semibold">
+              Critical
+            </p>
+            <p class="mt-2 text-base text-gray-600 sm:text-lg md:text-normal">
+              Belajar React dari situs React-nya langsung
+            </p>
+          </div>
+          <div class="w-full md:w-1/4 px-4 mb-4 md:mb-0">
+            <!-- <div class="mb-4">
+              <button
+                class="w-full px-3 py-4 font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg">Edit</button>
+            </div> -->
+            <div>
+              <button class="w-full px-3 py-4 font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg">
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ToDo 2 -->
+      <div
+        class="w-full px-6 py-6 mx-auto mt-10 bg-white border border-gray-200 rounded-lg sm:px-8 md:px-12 sm:py-8 sm:shadow lg:w-5/6 xl:w-2/3">
+        <h3 class="text-lg font-bold text-purple-500 sm:text-xl md:text-2xl">
+          Belajar Tailwind
+        </h3>
+
+        <div class="flex flex-wrap">
+          <div class="w-full md:w-3/4 px-4 mb-4 md:mb-0">
+            <p
+              class="mt-2 mr-2 text-base text-gray-600 sm:text-normal md:text-sm inline-block bg-gray-200 rounded-full px-3 py-1 font-semibold">
+              Low
+            </p>
+            <p class="mt-2 text-base text-gray-600 sm:text-lg md:text-normal">
+              Belajar Tailwind dari situs Tailwind-nya langsung
+            </p>
+          </div>
+          <div class="w-full md:w-1/4 px-4 mb-4 md:mb-0">
+            <!-- <div class="mb-4">
+              <button
+                class="w-full px-3 py-4 font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg">Edit</button>
+            </div> -->
+            <div>
+              <button class="w-full px-3 py-4 font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg">
+                Finish
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ToDo 3 -->
+      <div
+        class="w-full px-6 py-6 mx-auto mt-10 bg-white border border-gray-200 rounded-lg sm:px-8 md:px-12 sm:py-8 sm:shadow lg:w-5/6 xl:w-2/3">
+        <h3 class="text-lg font-bold text-purple-500 sm:text-xl md:text-2xl">
+          Buat Aplikasi ToDo
+        </h3>
+
+        <div class="flex flex-wrap">
+          <div class="w-full md:w-3/4 px-4 mb-4 md:mb-0">
+            <p
+              class="mt-2 mr-2 text-base text-gray-600 sm:text-normal md:text-sm inline-block bg-gray-200 rounded-full px-3 py-1 font-semibold">
+              Highest
+            </p>
+            <p class="mt-2 text-base text-gray-600 sm:text-lg md:text-normal">
+              Buat aplikasi ToDo sederhana dengan memanfaatkan React dan
+              Tailwind
+            </p>
+          </div>
+          <div class="w-full md:w-1/4 px-4 mb-4 md:mb-0">
+            <!-- <div class="mb-4">
+              <button
+                class="w-full px-3 py-4 font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg">Edit</button>
+            </div> -->
+            <div>
+              <button class="w-full px-3 py-4 font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg">
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5 - Footer -->
+  <section class="text-gray-700 bg-white body-font">
+    <div class="container flex flex-col items-center px-8 py-8 mx-auto max-w-7xl sm:flex-row">
+      <!-- Left Side -->
+      <a href="#_" class="text-xl font-black leading-none text-gray-900 select-none logo">ToDo ReactJS v1</a>
+
+      <!-- Right Side -->
+      <span class="inline-flex justify-center mt-4 space-x-5 sm:ml-auto sm:mt-0 sm:justify-start">
+        <p class="mt-4 text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l sm:border-gray-200 sm:mt-0">
+          © Tailwindcss Page Builder x withered-flowers
+        </p>
+      </span>
+    </div>
+  </section>
+
+  <!-- Script section -->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>
