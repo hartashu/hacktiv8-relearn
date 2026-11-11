@@ -6,10 +6,15 @@ import ProductCard from './components/ProductCard';
 import CategoryFilter from './components/CategoryFilter';
 import useProducts from './hooks/useProducts';
 import SearchBar from './components/SearchBar';
+import Modal from './components/Modal';
+import ProductDetail from './components/ProductDetail';
+import CartView from './components/CartView';
 
 export default function App() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   const { products, isLoading, error, refetch } = useProducts(selectedCategory);
 
@@ -17,11 +22,13 @@ export default function App() {
     product.title.toLowerCase().includes(searchQuery.toLowerCase().trim()),
   );
 
+  // function handleClickProduct() {}
+
   return (
     <div className="min-h-screen bg-slate-900 text-slate-100 p-8 flex justify-center">
       <div className="w-full max-w-4xl space-y-6">
         {/* Header & Aksi */}
-        <Header onReload={refetch} />
+        <Header onReload={refetch} onOpenCart={() => setIsCartOpen(true)} />
 
         <div className="space-y-4">
           <CategoryFilter
@@ -48,10 +55,32 @@ export default function App() {
           // 2. Container Grid HANYA dipasang jika memang ada kartu produk yang akan dirender
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
+              <div
+                key={product.id}
+                onClick={() => setSelectedProduct(product)}
+                className="cursor-pointer transition-transform hover:scale-[1.02]"
+              >
+                <ProductCard product={product} />
+              </div>
             ))}
           </div>
         )}
+
+        <Modal
+          isOpen={Boolean(selectedProduct)}
+          onClose={() => setSelectedProduct(null)}
+        >
+          {selectedProduct && (
+            <ProductDetail
+              product={selectedProduct}
+              onClose={() => setSelectedProduct(null)}
+            />
+          )}
+        </Modal>
+
+        <Modal isOpen={isCartOpen} onClose={() => setIsCartOpen(false)}>
+          <CartView onClose={() => setIsCartOpen(false)} />
+        </Modal>
       </div>
     </div>
   );
