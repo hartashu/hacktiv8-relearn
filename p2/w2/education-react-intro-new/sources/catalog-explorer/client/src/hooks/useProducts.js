@@ -5,15 +5,21 @@ export default function useProducts(category) {
   const [error, setError] = useState(null);
   const [products, setProducts] = useState([]);
 
-  async function fetchProducts(category = 'all') {
+  async function fetchProducts(category) {
     try {
       setIsLoading(true);
       setError(null);
 
-      const url =
-        category === 'all'
-          ? 'https://fakestoreapi.com/products?limit=6'
-          : `https://fakestoreapi.com/products/category/${category}`;
+      // const url =
+      //   category === 'all'
+      //     ? 'https://fakestoreapi.com/products?limit=6'
+      //     : `https://fakestoreapi.com/products/category/${category}`;
+
+      const queryString =
+        !category || category === 'all'
+          ? ''
+          : `?category=${encodeURIComponent(category)}`;
+      const url = `http://localhost:3000/api/products${queryString}`;
 
       const response = await fetch(url);
 
@@ -22,7 +28,7 @@ export default function useProducts(category) {
       }
 
       const data = await response.json();
-      setProducts(data);
+      setProducts(data.data);
     } catch (error) {
       setError(error.message);
     } finally {

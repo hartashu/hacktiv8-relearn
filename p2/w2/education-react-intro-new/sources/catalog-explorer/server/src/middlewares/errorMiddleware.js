@@ -1,10 +1,19 @@
-const errorHandler = (err, req, res, next) => {
-  console.error('Server Error:', err);
+export class AppError extends Error {
+  constructor(message, statusCode = 500) {
+    super(message);
+    this.statusCode = statusCode;
+  }
+}
 
-  return res.status(500).json({
-    status: 'error',
-    message: 'Terjadi kesalahan internal pada server.',
+export const errorHandler = (err, req, res, next) => {
+  console.error('Error:', err);
+
+  const statusCode = err.statusCode || 500;
+  const status = statusCode >= 500 ? 'error' : 'fail';
+  const message = err.message || 'Terjadi kesalahan internal pada server.';
+
+  return res.status(statusCode).json({
+    status,
+    message,
   });
 };
-
-export default errorHandler;

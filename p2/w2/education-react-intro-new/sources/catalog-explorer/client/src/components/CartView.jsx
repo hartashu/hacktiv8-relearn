@@ -87,7 +87,9 @@ export default function CartView({ onClose }) {
                 <p className="text-sm font-medium text-slate-200 truncate">
                   {item.title}
                 </p>
-                <p className="text-xs text-slate-400 mt-0.5">${item.price}</p>
+                <p className="text-xs text-slate-400 mt-0.5">
+                  Rp. {Number(item.price).toLocaleString('id-ID')}
+                </p>
               </div>
 
               <div className="flex items-center gap-2 bg-slate-900 border border-slate-700 rounded-lg px-2 py-1">
@@ -112,7 +114,8 @@ export default function CartView({ onClose }) {
 
               <div className="flex items-center gap-3">
                 <span className="text-sm font-bold text-emerald-400 min-w-16 text-right">
-                  ${(item.price * item.quantity).toFixed(2)}
+                  Rp.{' '}
+                  {Number(item.price * item.quantity).toLocaleString('id-ID')}
                 </span>
 
                 <button
@@ -134,7 +137,7 @@ export default function CartView({ onClose }) {
           <div className="flex justify-between items-center text-slate-200">
             <span className="font-medium">Total Pembayaran:</span>
             <span className="text-2xl font-bold text-emerald-400">
-              ${totalPrice.toFixed(2)}
+              Rp. {Number(totalPrice).toLocaleString('id-ID')}
             </span>
           </div>
 

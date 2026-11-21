@@ -23,7 +23,7 @@ export default function ProductCard({ product }) {
         <div className="mt-4 pt-3 border-t border-slate-700/60 flex items-center justify-between">
           <span className="text-xs text-slate-400">Harga</span>
           <span className="text-base font-bold text-emerald-400">
-            ${product.price.toFixed(2)}
+            Rp. {Number(product.price).toLocaleString('id-ID')}
           </span>
         </div>
       </div>

@@ -1,6 +1,6 @@
-import ProductModel from '../models/ProductModel.js';
+import { ProductModel } from '../models/ProductModel.js';
 
-export default class ProductController {
+export class ProductController {
   static async getAllProducts(req, res, next) {
     try {
       const { category } = req.query;

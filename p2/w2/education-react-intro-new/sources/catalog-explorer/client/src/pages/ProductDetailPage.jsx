@@ -23,7 +23,8 @@ export default function ProductDetailPage() {
         setError(null);
 
         const response = await fetch(
-          `https://fakestoreapi.com/products/${id}`,
+          // `https://fakestoreapi.com/products/${id}`,
+          `http://localhost:3000/api/products/${id}`,
           {
             signal: controller.signal,
           },
@@ -34,7 +35,7 @@ export default function ProductDetailPage() {
         }
 
         const data = await response.json();
-        setProduct(data);
+        setProduct(data.data);
       } catch (error) {
         if (error.name !== 'AbortError') {
           setError(error.message || 'Gagal memuat detail produk.');
@@ -99,15 +100,19 @@ export default function ProductDetailPage() {
               {product.title}
             </h1>
 
-            <div className="flex items-center gap-2 text-sm text-amber-400">
+            {/* <div className="flex items-center gap-2 text-sm text-amber-400">
               <span>★ {product.rating?.rate}</span>
               <span className="text-slate-500">
                 ({product.rating?.count} ulasan)
               </span>
+            </div> */}
+
+            <div className="flex items-center gap-2 text-sm text-sky-400">
+              <span>Stok tersedia: {product.stock} unit</span>
             </div>
 
             <p className="text-3xl font-extrabold text-emerald-400 pt-2">
-              ${product.price}
+              Rp. {Number(product.price).toLocaleString('id-ID')}
             </p>
 
             <p className="text-sm text-slate-300 leading-relaxed pt-2">

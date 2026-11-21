@@ -1,0 +1,57 @@
+// use prisma-8
+
+model User {
+  id            Int       @id @default(autoincrement())
+  fullName      String    @map("full_name")
+  email         String    @unique 
+  passwordHash  String    @map("password_hash")
+  role          String    @default("CUSTOMER")
+  createdAt     DateTime  @default(now()) @onCreate(now()) @map("created_at")
+
+  orders        Order[]
+
+  @@map("users")
+}
+
+model Product {
+  id            Int       @id @default(autoincrement())
+  title         String
+  price         Float
+  category      String
+  description   String    @default("")
+  image         String    @default("https://via.placeholder.com/300")
+  stock         Int       @default(0)
+  createdAt     DateTime  @default(now()) @onCreate(now()) @map("created_at")
+
+  orderItems    OrderItem[]
+
+  @@map("products")
+}
+
+model Order {
+  id            Int         @id @default(autoincrement())
+  userId        Int         @map("user_id")
+  address       String
+  paymentMethod String      @map("payment_method")
+  totalAmount   Float       @map("total_amount")
+  status        String      @default("PENDING")
+  createdAt     DateTime    @default(now()) @onCreate(now()) @map("created_at")
+
+  user          User        @relation(fields: [userId], references: [id])
+  orderItems    OrderItem[]
+
+  @@map("orders")
+}
+
+model OrderItem {
+  id            Int         @id @default(autoincrement())
+  orderId       Int         @map("order_id")
+  productId     Int         @map("product_id")
+  quantity      Int         
+  priceAtTime   Float       @map("price_at_time")
+
+  order         Order       @relation(fields: [orderId], references: [id])
+  product      Product     @relation(fields: [productId], references: [id])
+
+  @@map("order_items")
+}

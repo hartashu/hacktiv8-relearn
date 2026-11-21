@@ -1,4 +1,4 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import useProducts from '../hooks/useProducts';
 import CategoryFilter from '../components/CategoryFilter';
 import SearchBar from '../components/SearchBar';

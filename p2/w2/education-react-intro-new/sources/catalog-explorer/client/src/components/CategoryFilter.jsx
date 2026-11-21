@@ -2,10 +2,10 @@ export default function CategoryFilter({ selectedCategory, onSelectCategory }) {
   // Daftar kategori yang tersedia di FakeStoreAPI
   const categories = [
     { label: 'Semua', value: 'all' },
-    { label: 'Elektronik', value: 'electronics' },
-    { label: 'Perhiasan', value: 'jewelery' },
-    { label: 'Pakaian Pria', value: "men's clothing" },
-    { label: 'Pakaian Wanita', value: "women's clothing" },
+    { label: 'Electronics', value: 'Electronics' },
+    { label: 'Books', value: 'Books' },
+    { label: 'Home & Living', value: 'Home & Living' },
+    { label: 'Apparel', value: 'Apparel' },
   ];
 
   return (
